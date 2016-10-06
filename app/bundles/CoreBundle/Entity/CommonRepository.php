@@ -456,6 +456,10 @@ class CommonRepository extends EntityRepository
             $parseFilters = &$filters;
         }
 
+        if (empty($type)) {
+            $type = "and";
+        }
+
         $parameters  = [];
         $expressions = $qb->expr()->{"{$type}X"}();
 
